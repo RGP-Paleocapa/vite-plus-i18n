@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import './i18n'
-import ChangeLanguageButton from './components/layout/ChangeLanguageButton';
+import ChangeLanguageButton from './components/ChangeLanguageButton';
 import { useTranslation } from 'react-i18next';
+import { Home, Alpha, Beta, Gamma } from './pages';
 
 const App = () => {
   const { t } = useTranslation();
@@ -24,35 +25,6 @@ const App = () => {
       </Routes>
     </>
   )
-}
-
-const Home = () => {
-  return (
-    <>
-      <h1>Home Page</h1>
-    </>
-  );
-}
-const Alpha = () => {
-  return (
-    <>
-      <h1>Alpha Page</h1>
-    </>
-  );
-}
-const Beta = () => {
-  return (
-    <>
-      <h1>Beta Page</h1>
-    </>
-  );
-}
-const Gamma = () => {
-  return (
-    <>
-      <h1>Gamma Page</h1>
-    </>
-  );
 }
 
 export default App

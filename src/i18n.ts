@@ -1,29 +1,22 @@
+// i18n.ts
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-
-// Import your translation files
-import translationEN from '@public/locales/en/translation.json';
-import translationES from '@public/locales/es/translation.json';
-
-// the translations
-const resources = {
-  en: {
-    translation: translationEN,
-  },
-  es: {
-    translation: translationES,
-  },
-};
+import LanguageDetector from 'i18next-browser-languagedetector';
+import Backend from 'i18next-http-backend';
 
 i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(Backend)
   .init({
-    resources,
-    lng: 'en', // default language
-    keySeparator: false, // we do not use keys in form messages.welcome
-    interpolation: {
-      escapeValue: false, // react already safes from xss
+    fallbackLng: 'en',
+    debug: false,
+    saveMissing: false,
+    backend: {
+      loadPath: 'locales/{{lng}}/{{ns}}.json',
     },
+    ns: ['header'], // Use an array for namespaces
+    defaultNS: 'translation', // Set the default namespace
   });
 
 export default i18n;

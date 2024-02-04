@@ -1,4 +1,16 @@
 {
-    "welcome": "Welcome to React"
+    "welcome": "Welcome to React",
+    "languages": {
+      "en": "English",
+      "it": "Italian",
+      "fr": "French"
+    },
+    "header": {
+      "languages": {
+        "en": "English",
+        "it": "Italian",
+        "fr": "French"
+      }
+    }
   }
   
