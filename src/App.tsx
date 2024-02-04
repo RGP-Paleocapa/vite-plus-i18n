@@ -1,11 +1,21 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
+import './i18n'
+import ChangeLanguageButton from './components/layout/ChangeLanguageButton';
+import { useTranslation } from 'react-i18next';
 
 const App = () => {
+  const { t } = useTranslation();
+
 
   return (
     <>
       <Navbar />
+      <ChangeLanguageButton />
+
+      <h1>{t('welcome')}</h1>
+
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/alpha" element={<Alpha />} />
