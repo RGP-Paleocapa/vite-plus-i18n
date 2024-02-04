@@ -14,14 +14,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js 20
         uses: actions/setup-node@v3
         with:
           node-version: '20'
           cache: 'pnpm'
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
       - name: Install dependencies
         run: pnpm install
