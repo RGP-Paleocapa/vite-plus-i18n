@@ -16,9 +16,11 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          cache: 'pnpm'
 
       - name: Install dependencies
-        uses: pnpm install
+        run: pnpm install
 
       - name: Build project
         run: pnpm run build
